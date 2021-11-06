@@ -6,11 +6,8 @@ Plug 'mattn/emmet-vim'
 Plug 'sbdchd/neoformat'
 Plug 'prettier/vim-prettier'
 Plug 'arcticicestudio/nord-vim'
-<<<<<<< HEAD
 Plug 'neoclide/coc.nvim'
-=======
 Plug 'neoclide/coc.nvim', { 'branch' : 'release'}
->>>>>>> 497756cd956b415b451eecd98f3727acaf547fcd
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'preservim/nerdcommenter'
 Plug 'rust-lang/rust.vim'
@@ -24,10 +21,7 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'tikhomirov/vim-glsl'
 
 call plug#end()
-<<<<<<< HEAD
-lua require "init"
-=======
->>>>>>> 497756cd956b415b451eecd98f3727acaf547fcd
+"lua require "init"
 syntax on
 colo pink
 let g:coc_global_extensions=['coc-omnisharp']
@@ -40,19 +34,15 @@ exec 'source' configDirectory . 'autocmd.vim'
 exec 'source' configDirectory . 'commands.vim'
 exec 'source' configDirectory . 'nerdcommenter.vim'
 
-<<<<<<< HEAD
 let delimitMate_matchpairs = "(:),[:],{:}"
 "let delimitMate_expand_cr = 1
 
-=======
 "let delimitMate_matchpairs = "(:),[:],{:}"
 "let delimitMate_expand_cr = 1
 
-let g:echodoc#enable_at_startup = 1
 set noshowmode
 
 
->>>>>>> 497756cd956b415b451eecd98f3727acaf547fcd
 set autoindent
 " Better use "+ (system register, pussy)
 "set clipboard=unnamed
@@ -76,7 +66,6 @@ set foldmethod=indent
 "set foldenable
 set nofoldenable
 set noswapfile
-<<<<<<< HEAD
 
 "set shell=bash
 
@@ -92,8 +81,6 @@ set statusline+=\ %F
 set statusline+=%=
 set statusline+=\ %{strftime('%H:%M')}
 set statusline+=\ %*
-=======
 set formatoptions-=cro
 
 "set shell=bash
->>>>>>> 497756cd956b415b451eecd98f3727acaf547fcd
