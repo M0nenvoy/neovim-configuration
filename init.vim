@@ -18,7 +18,6 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'beyondmarc/hlsl.vim'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'tikhomirov/vim-glsl'
-Plug 'Shougo/echodoc.vim'
 
 call plug#end()
 syntax on
