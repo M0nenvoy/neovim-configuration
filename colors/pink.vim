@@ -44,7 +44,7 @@ hi SignColumn ctermbg=none
 
 hi LineNr       ctermfg=245 cterm=none guifg=#304673
 hi CursorLineNr ctermfg=255 cterm=bold guifg=#ffffff gui=bold
-hi CursorLine   ctermfg=none ctermbg=234 cterm=none guibg=#13191E
+hi CursorLine   ctermfg=none ctermbg=none cterm=none guibg=#13191E
 hi CursorColumn ctermbg=239 cterm=none
 hi CursorIM     ctermbg=239 cterm=none gui=bold
 hi MatchParen   ctermbg=242 guibg=#9CA9BC guifg=#02080D gui=bold

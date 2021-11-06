@@ -1,10 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-surround'
-"Plug 'easymotion/vim-easymotion'
-"Plug 'ptzz/lf.vim'
 Plug 'mattn/emmet-vim'
-Plug 'Raimondi/delimitMate'
+"Plug 'Raimondi/delimitMate'
 Plug 'sbdchd/neoformat'
 Plug 'prettier/vim-prettier'
 Plug 'arcticicestudio/nord-vim'
@@ -20,6 +18,7 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'beyondmarc/hlsl.vim'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'tikhomirov/vim-glsl'
+Plug 'Shougo/echodoc.vim'
 
 call plug#end()
 syntax on
@@ -36,6 +35,10 @@ exec 'source' configDirectory . 'nerdcommenter.vim'
 
 "let delimitMate_matchpairs = "(:),[:],{:}"
 "let delimitMate_expand_cr = 1
+
+let g:echodoc#enable_at_startup = 1
+set noshowmode
+
 
 set autoindent
 " Better use "+ (system register, pussy)
