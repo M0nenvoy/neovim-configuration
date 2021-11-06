@@ -8,6 +8,7 @@ let g:colors_name="pink"
 
 hi Normal    ctermfg=231 ctermbg=none
 hi ErrorMsg  ctermfg=205 ctermbg=none
+""hi ErrorMsg cterm=none ctermbg=none ctermfg=none
 hi visual    ctermbg=239
 hi Todo      ctermfg=231 ctermbg=none cterm=bold
 hi Search    ctermfg=231 ctermbg=242
@@ -59,8 +60,8 @@ hi Bold       cterm=bold gui=bold
 hi Underlined cterm=underline
 hi Italic     cterm=italic gui=italic
 hi Ignore     cterm=none
-hi Error      ctermfg=red ctermbg=none cterm=bold,undercurl guisp=#ff5f87
-
+""hi Error      ctermfg=red ctermbg=none cterm=bold,undercurl guisp=#ff5f87
+hi Error cterm=none ctermbg=none ctermfg=none
 "" Comment
 hi Comment         ctermfg=250
 hi SpecialComment  ctermfg=253

@@ -41,6 +41,7 @@ let delimitMate_matchpairs = "(:),[:],{:}"
 "let delimitMate_expand_cr = 1
 
 set noshowmode
+set signcolumn=number
 
 
 set autoindent

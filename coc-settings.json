@@ -11,5 +11,6 @@
   "signature.target": "echo",
   "suggest.noselect": true,
   "suggest.triggerAfterInsertEnter": false,
-  "suggest.enablePreselect": false
+  "suggest.enablePreselect": false,
+  "diagnostic.errorSign": "->"
 }
