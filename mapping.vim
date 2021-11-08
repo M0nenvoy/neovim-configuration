@@ -42,14 +42,20 @@ inoremap <c-p> <c-c>:call ToggleKeyMap()<CR>a
 "
 " Coc-on-enter is vewy important! It handles brackets and html tags opening
 " you know what i'm saying?
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-" Show suggestions! Ctrl-space doesn't work though. Dunno why
-inoremap <silent><expr> <c-]> coc#refresh()
-nmap <silent> gd <plug>(coc-definition)
-nmap <silent> gy <plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-" Highlightes same words!
-nmap <F2> <plug>(coc-rename)
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+if exists("suggest.autoTrigger")
+    inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+    " Show suggestions! Ctrl-space doesn't work though. Dunno why
+    inoremap <silent><expr> <c-]> coc#refresh()
+    nmap <silent> gd <plug>(coc-definition)
+    nmap <silent> gy <plug>(coc-type-definition)
+    nmap <silent> gi <Plug>(coc-implementation)
+    nmap <silent> gr <Plug>(coc-references)
+    " Highlightes same words!
+    nmap <F2> <plug>(coc-rename)
+    nnoremap <silent> K :call <SID>show_documentation()<CR>
+endif
 
+if exists("g:lsp_auto_enable")
+  nnoremap <silent> gd <plug>(lsp-definition)
+  nnoremap <silent> K <plug>(lsp-signature-help)
+endif

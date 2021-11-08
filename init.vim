@@ -6,8 +6,11 @@ Plug 'mattn/emmet-vim'
 Plug 'sbdchd/neoformat'
 Plug 'prettier/vim-prettier'
 Plug 'arcticicestudio/nord-vim'
-Plug 'neoclide/coc.nvim'
-Plug 'neoclide/coc.nvim', { 'branch' : 'release'}
+" Plug 'neoclide/coc.nvim', { 'branch' : 'release'}
+
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'preservim/nerdcommenter'
 Plug 'rust-lang/rust.vim'
@@ -85,3 +88,10 @@ set statusline+=\ %*
 set formatoptions-=cro
 
 "set shell=bash
+"
+
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_document_highlight_enabled = 0
+let g:lsp_diagnostics_virtual_text_enabled = 0
+
+hi! LspErrorVirtualText ctermfg=red
