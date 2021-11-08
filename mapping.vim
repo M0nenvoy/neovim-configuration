@@ -26,7 +26,7 @@ nnoremap <leader>w :w <cr>
 nnoremap <leader>C :tabedit $myvimrc <CR>
 nnoremap <silent> <leader>t :tabnew <CR>
 nnoremap <silent> <leader>h :nohl <CR>
-nnoremap <silent> <leader>U viwU
+nnoremap <silent> <leader>u viwUe
 
 
 nnoremap <silent> <leader>F :FZF<CR>
