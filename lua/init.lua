@@ -10,7 +10,7 @@ local on_attach = function (client, bufnr)
     buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 end
 
-local servers = { 'clangd' }
+local servers = { 'clangd', 'java_language_server' }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
