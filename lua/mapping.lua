@@ -10,5 +10,7 @@ nnoremap <silent> <leader>h :nohl <CR>
 nnoremap <silent> <leader>u viwUe
 nnoremap <silent> <leader>F :Telescope find_files<cr>
 
+inoremap <C-]> <C-x><C-o>
+
 tnoremap <Esc> <C-\><C-n>
 ]]
