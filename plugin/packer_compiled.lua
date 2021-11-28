@@ -74,9 +74,20 @@ _G.packer_plugins = {
     path = "C:\\Users\\RoflanPC\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+<<<<<<< HEAD
   ["plenary.nvim"] = {
     loaded = true,
     path = "C:\\Users\\RoflanPC\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
+=======
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "C:\\Users\\golds\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\golds\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
+>>>>>>> 71f6299bb14846a4bf1a6f9f4dfa11ae6bee7be1
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["telescope.nvim"] = {

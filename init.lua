@@ -43,3 +43,11 @@ require('mapping')
 -- LSP
 
 require('init')
+
+-- Hilight
+
+vim.cmd
+[[
+hi LspDiagnosticsDefaultError ctermfg=242
+hi LspDiagnosticsDefaultWarning ctermfg=240
+]]

@@ -127,4 +127,6 @@ hi def link CocErrorHighlight   Error
 hi def link CocWarningHighlight WarningMsg
 hi def link CocInfoHighlight    WarningMsg
 hi def link CocHintHighlight CocHintSign
- 
+
+hi LspDiagnosticsDefaultError ctermfg=242
+hi LspDiagnosticsDefaultWarning ctermfg=240
