@@ -16,7 +16,7 @@ local on_attach = function (client, bufnr)
     buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
 end
 
-local servers = { 'clangd' }
+local servers = { 'clangd', 'java_language_server' }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,

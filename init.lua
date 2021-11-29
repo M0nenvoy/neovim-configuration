@@ -1,5 +1,17 @@
 vim.cmd("colo 256_noir")
 
+<<<<<<< HEAD
+=======
+vim.opt.termguicolors = true
+-- Cursor
+vim.cmd[[
+hi  Cursor guifg=white guibg=black
+hi iCursor guifg=white guibg=red
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:block-iCursor
+set guicursor+=i-n-v-c:blinkon2-blinkoff4-blinkwait700
+]]
+>>>>>>> 0d021bb95fc4c41565232b4d9c45b00c6b18c3f9
 vim.opt.showmode = false
 vim.opt.signcolumn="number"
 
