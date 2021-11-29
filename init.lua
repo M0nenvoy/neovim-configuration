@@ -1,4 +1,4 @@
-vim.cmd("colo pink")
+vim.cmd("colo 256_noir")
 
 vim.opt.showmode = false
 vim.opt.signcolumn="number"
@@ -40,8 +40,8 @@ require('init')
 
 -- Hilight
 
-vim.cmd
-[[
-hi LspDiagnosticsDefaultError ctermfg=242
-hi LspDiagnosticsDefaultWarning ctermfg=240
-]]
+--vim.cmd
+--[[
+--hi LspDiagnosticsDefaultError ctermfg=242
+--hi LspDiagnosticsDefaultWarning ctermfg=240
+--]]
