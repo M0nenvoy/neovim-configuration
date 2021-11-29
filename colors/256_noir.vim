@@ -21,12 +21,12 @@ endif
 let g:colors_name = "256_noir"
 
 if has("gui_running") || &t_Co == 256
-    hi Normal cterm=NONE ctermfg=250 ctermbg=16 gui=NONE guifg=#bcbcbc  
-    hi Keyword cterm=NONE ctermfg=255   gui=NONE guifg=#eeeeee  
-    hi Constant cterm=NONE ctermfg=252   gui=NONE guifg=#d0d0d0  
-    hi String cterm=NONE ctermfg=245   gui=NONE guifg=#8a8a8a  
-    hi Comment cterm=NONE ctermfg=240   gui=NONE guifg=#585858  
-    hi Number cterm=NONE ctermfg=196   gui=NONE guifg=#ff0000  
+    hi Normal cterm=NONE ctermfg=250 ctermbg=16 gui=NONE guifg=#bcbcbc
+    hi Keyword cterm=NONE ctermfg=255   gui=NONE guifg=#eeeeee
+    hi Constant cterm=NONE ctermfg=252   gui=NONE guifg=#d0d0d0
+    hi String cterm=NONE ctermfg=245   gui=NONE guifg=#8a8a8a
+    hi Comment cterm=NONE ctermfg=240   gui=NONE guifg=#585858
+    hi Number cterm=NONE ctermfg=196   gui=NONE guifg=#ff0000
     hi Error cterm=NONE ctermfg=255 ctermbg=88 gui=NONE guifg=#eeeeee guibg=#870000
     hi ErrorMsg cterm=NONE ctermfg=255 ctermbg=124 gui=NONE guifg=#eeeeee guibg=#af0000
     hi Search cterm=NONE ctermfg=245 ctermbg=236 gui=NONE guifg=#8a8a8a guibg=#303030
@@ -45,7 +45,7 @@ if has("gui_running") || &t_Co == 256
     hi CursorLine cterm=NONE ctermfg=NONE ctermbg=233 gui=NONE guifg=NONE guibg=#121212
     hi StatusLine cterm=bold,reverse ctermfg=245   gui=bold,reverse guifg=#8a8a8a  
     hi StatusLineNC cterm=reverse ctermfg=236   gui=reverse guifg=#303030  
-    hi Visual cterm=reverse ctermfg=250   gui=reverse guifg=#bcbcbc  
+    hi Visual cterm=reverse ctermfg=250   gui=reverse guifg=#111111
     hi TermCursor cterm=reverse ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE
 else
     hi Normal cterm=NONE ctermfg=Gray ctermbg=Black
