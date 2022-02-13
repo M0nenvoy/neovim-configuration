@@ -16,7 +16,17 @@ local on_attach = function (client, bufnr)
     buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
 end
 
-local servers = { 'clangd', 'java_language_server' }
+nvim_lsp.java_language_server.setup {
+    on_attach = on_attach,
+    cmd = {'lang_server_linux.sh'},
+};
+-- html : npm i -g vscode-langservers-extracted
+--
+nvim_lsp.html.setup {
+    filetypes = { 'html', 'xml' };
+    on_attach = on_attach;
+};
+local servers = { 'clangd' };
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
