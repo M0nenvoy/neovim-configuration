@@ -38,19 +38,11 @@ vim.o.statusline = "%{(&fenc != ''?&fenc:&enc)} | %{&fileformat} | %F"
 
 -- Plugins and other
 
-require('plugins/packer')
+require 'plugins/packer'
 -- Mappings
 
-require('mapping')
+require 'mapping'
 
 -- LSP
 
-require('init')
-
--- Hilight
-
---vim.cmd
---[[
---hi LspDiagnosticsDefaultError ctermfg=242
---hi LspDiagnosticsDefaultWarning ctermfg=240
---]]
+require 'lsp'
