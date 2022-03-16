@@ -7,7 +7,10 @@ local on_attach = function (client, bufnr)
     local opts = { noremap = true, silent = true }
 
     buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-    buf_set_keymap('i', '<C-]>', '<c-x><c-o>', opts)
+
+    -- <C-space> is interpreted as <c-@>
+    buf_set_keymap('i', '<C-@>', '<c-x><c-o>', opts)
+    buf_set_keymap('i', '<C-space>', '<c-x><c-o>', opts)
 
     buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     buf_set_keymap('n',  'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
