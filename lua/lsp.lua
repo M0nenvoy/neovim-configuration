@@ -1,4 +1,5 @@
-local nvim_lsp = require('lspconfig')
+local nvim_lsp  = require('lspconfig')
+local os        = require('os')
 
 local on_attach = function (client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -17,17 +18,25 @@ local on_attach = function (client, bufnr)
     buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 end
 
-nvim_lsp.java_language_server.setup {
-    on_attach = on_attach,
-    cmd = {'lang_server_linux.sh'},
-};
+-- nvim_lsp.java_language_server.setup {
+--     on_attach = on_attach,
+--     cmd = {'lang_server_linux.sh'},
+-- };
+local jdtls_cmd = os.getenv("JDTLS_HOME");
+-- root_dir = require('jdtls.setup').find_root({'.git', 'mvnw'});
+assert(jdtls_cmd ~= nil, "JDTLS_HOME is not set");
+-- assert(root_dir ~= nil, "Root dir not found");
+nvim_lsp.jdtls.setup {
+    on_attach   = on_attach,
+    cmd         = { jdtls_cmd .. '/' .. 'jdtls'},
+}
 -- html : npm i -g vscode-langservers-extracted
 --
 nvim_lsp.html.setup {
     filetypes = { 'html', 'xml' };
     on_attach = on_attach;
 };
-local servers = { 'clangd' };
+local servers = { 'ccls' };
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,

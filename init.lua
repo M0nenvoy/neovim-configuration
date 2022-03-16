@@ -1,6 +1,12 @@
+local os = require"os"
+local terminal = os.getenv("TERM");
+
+if (terminal ~= "linux") then
+    vim.opt.termguicolors = true
+end
+
 vim.cmd("colo 256_noir")
 
-vim.opt.termguicolors = true
 -- Cursor
 vim.cmd[[
 hi iCursor guifg=white guibg=red
