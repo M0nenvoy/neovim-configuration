@@ -1,7 +1,8 @@
 vim.cmd
 [[
-let mapleader=' '
+let mapleader= ' '
 
+"                               ------------ VARIOUS ---------------
 nnoremap <leader>S :source % <CR>
 nnoremap <leader>w :w <cr>
 nnoremap <leader>C :tabedit $myvimrc <CR>
@@ -10,7 +11,27 @@ nnoremap <silent> <leader>h :nohl <CR>
 nnoremap <silent> <leader>u viwUe
 nnoremap <silent> <leader>F :Telescope find_files<cr>
 
-inoremap <C-]> <C-x><C-o>
+"                               -------------- LSP ---------------
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> <leader>r <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> <leader>a, <cmd>lua vim.lsp.buf.code_action()<CR>
+nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+inoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> <leader>e <cmd>lua vim.diagnostic.open_float()<CR>
 
+inoremap <c-p> <c-a>
+
+"                               ------------ SNIPPETS ---------------
+" press <Tab> to expand or jump in a snippet. These can also be mapped separately
+" via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
+
+imap <silent><expr> <c-j> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<c-j>'
+
+inoremap <silent> <S-c-j> <cmd>lua require'luasnip'.jump(-1)<Cr>
+snoremap <silent> <c-j> <cmd>lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <S-c-j> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+"                               ------------ TERMINAL ---------------
 tnoremap <Esc> <C-\><C-n>
 ]]

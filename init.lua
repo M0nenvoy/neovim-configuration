@@ -1,6 +1,8 @@
 local os = require"os"
 local terminal = os.getenv("TERM");
 
+require('impatient')
+
 if (terminal ~= "linux") then
     vim.opt.termguicolors = true
 end
@@ -42,13 +44,30 @@ vim.opt.swapfile = false
 
 vim.o.statusline = "%{(&fenc != ''?&fenc:&enc)} | %{&fileformat} | %F"
 
--- Plugins and other
+-- COQ settings
+vim.g.coq_settings = {
+    -- [ "auto_start" ] = 'shut-up',
+    [ "completion.always" ] = false,
+    [ "keymap.pre_select" ] = false,
+    [ "display.ghost_text.context" ] = {"", ""},
+    [ "display.icons.mode" ] = "none",
 
+}
+
+-- Plugins
 require 'plugins/packer'
--- Mappings
-
-require 'mapping'
 
 -- LSP
+require 'plugins/cmp-lsp'
 
-require 'lsp'
+-- Mappings
+require 'mapping'
+
+-- Surround
+require("nvim-surround").setup()
+
+-- Snippets
+-- snips work like dogshit idk
+-- local luasnip = require("luasnip")
+-- luasnip.snippets = require("luasnip-snippets").load_snippets()
+require('luasnip.loaders.from_vscode').lazy_load()
