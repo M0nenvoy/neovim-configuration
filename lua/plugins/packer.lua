@@ -12,6 +12,6 @@ return require('packer').startup(function(use)
      'lewis6991/impatient.nvim',
      'kylechui/nvim-surround',
      require('plugins/telescope'),
-     'plugins/treesitter'
+     'nvim-treesitter/nvim-treesitter'
   }
 end)
