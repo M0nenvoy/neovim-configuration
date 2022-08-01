@@ -23,14 +23,13 @@ nnoremap <silent> <leader>e <cmd>lua vim.diagnostic.open_float()<CR>
 inoremap <c-p> <c-a>
 
 "                               ------------ SNIPPETS ---------------
-" press <Tab> to expand or jump in a snippet. These can also be mapped separately
 " via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
 
 imap <silent><expr> <c-j> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<c-j>'
 
-inoremap <silent> <S-c-j> <cmd>lua require'luasnip'.jump(-1)<Cr>
+inoremap <silent> <c-h> <cmd>lua require'luasnip'.jump(-1)<Cr>
 snoremap <silent> <c-j> <cmd>lua require('luasnip').jump(1)<Cr>
-snoremap <silent> <S-c-j> <cmd>lua require('luasnip').jump(-1)<Cr>
+snoremap <silent> <c-h> <cmd>lua require('luasnip').jump(-1)<Cr>
 
 "                               ------------ TERMINAL ---------------
 tnoremap <Esc> <C-\><C-n>

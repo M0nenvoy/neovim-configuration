@@ -10,13 +10,14 @@ end
 vim.cmd("colo 256_noir")
 
 -- Cursor
-vim.cmd[[
-hi iCursor guifg=white guibg=red
-hi nCursor guifg=white guibg=grey
-set guicursor=n-v-c:block-nCursor
-set guicursor+=i:block-iCursor
-set guicursor+=i-n-v-c:blinkon200-blinkoff400-blinkwait700
-]]
+-- vim.cmd[[
+-- hi iCursor guifg=white guibg=red
+-- hi nCursor guifg=white guibg=grey
+-- set guicursor=n-v-c:block-nCursor
+-- set guicursor+=i:block-iCursor
+-- set guicursor+=i-n-v-c:blinkon200-blinkoff400-blinkwait700
+-- ]]
+--
 vim.opt.showmode = false
 vim.opt.signcolumn="number"
 
@@ -44,16 +45,6 @@ vim.opt.swapfile = false
 
 vim.o.statusline = "%{(&fenc != ''?&fenc:&enc)} | %{&fileformat} | %F"
 
--- COQ settings
-vim.g.coq_settings = {
-    -- [ "auto_start" ] = 'shut-up',
-    [ "completion.always" ] = false,
-    [ "keymap.pre_select" ] = false,
-    [ "display.ghost_text.context" ] = {"", ""},
-    [ "display.icons.mode" ] = "none",
-
-}
-
 -- Plugins
 require 'plugins/packer'
 
@@ -65,9 +56,10 @@ require 'mapping'
 
 -- Surround
 require("nvim-surround").setup()
-
 -- Snippets
 -- snips work like dogshit idk
 -- local luasnip = require("luasnip")
 -- luasnip.snippets = require("luasnip-snippets").load_snippets()
 require('luasnip.loaders.from_vscode').lazy_load()
+
+require('plugins/treesitter')
