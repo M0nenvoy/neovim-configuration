@@ -14,9 +14,8 @@ enabled = function ()
     if vim.api.nvim_get_mode().mode == 'c' then
         return true
     else
-        -- In example treesitter is included. But I've heard that it's quite buggy so I didn't
-        -- include it here
-        return not context.in_syntax_group("Comment") and not context.in_syntax_group("String")
+        return (not context.in_syntax_group("Comment")and not context.in_treesitter_capture("comment")
+        and (not context.in_syntax_group("String") and not context.in_treesitter_capture("string")))
     end
 end,
 completion = {
@@ -59,6 +58,11 @@ sources = cmp.config.sources({
 })
 })
 
+-- Disable autocompletion in telescope
+cmp.setup.filetype('TelescopePrompt', {
+    enabled = false
+})
+
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
 mapping = cmp.mapping.preset.cmdline(),
@@ -73,13 +77,15 @@ local lcfg = require('lspconfig')
 
 lcfg['emmet_ls'].setup  {
     capabilities = capabilities,
-    filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss' },
+    filetypes = { 'html', 'php', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss' },
 }
 lcfg['gopls'].setup     { capabilities = capabilities }
 lcfg['pyright'].setup   { capabilities = capabilities }
 lcfg['ccls'].setup      { capabilities = capabilities }
 lcfg['tsserver'].setup  { capabilities = capabilities }
 lcfg['sumneko_lua'].setup { capabilities = capabilities }
+lcfg['intelephense'].setup { capabilities = capabilities }
+lcfg['tailwindcss'].setup { capabilities = capabilities }
 
 
 -- Get rid of that ugly ass yellow color

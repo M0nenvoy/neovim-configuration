@@ -62,4 +62,8 @@ require("nvim-surround").setup()
 -- luasnip.snippets = require("luasnip-snippets").load_snippets()
 require('luasnip.loaders.from_vscode').lazy_load()
 
-require('plugins/treesitter')
+require 'plugins/treesitter'
+
+-- :LspInstall
+require('mason').setup()
+require('mason-lspconfig').setup()

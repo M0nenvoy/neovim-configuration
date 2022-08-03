@@ -12,6 +12,8 @@ return require('packer').startup(function(use)
      'lewis6991/impatient.nvim',
      'kylechui/nvim-surround',
      require('plugins/telescope'),
-     'nvim-treesitter/nvim-treesitter'
+     'nvim-treesitter/nvim-treesitter',
+     "williamboman/mason-lspconfig.nvim",
+     'williamboman/mason.nvim'
   }
 end)

@@ -21,8 +21,8 @@ endif
 let g:colors_name = "256_noir"
 
 let literal = '#00a8e8'
-let accent  = '#f9c74f'
-let accent2 = '#ff8fa3'
+let primary  = '#f9c74f'
+let secondary = '#ff8fa3'
 
 " The line numerations
 let numeration  = '#007ea7'
@@ -42,34 +42,36 @@ if has("gui_running") || &t_Co == 256
     hi Normal cterm=NONE ctermfg=250 ctermbg=16 gui=NONE guifg=#cef3ff
     hi Keyword cterm=NONE gui=NONE guifg=#ffffff
     hi Constant cterm=NONE ctermfg=252   gui=NONE guifg=#d0d0d0
-    exe printf('hi Type cterm=NONE ctermfg=245 gui=NONE guifg=%s', accent)
+    exe printf('hi Type cterm=NONE ctermfg=245 gui=NONE guifg=%s', primary)
 
     exe printf('hi String cterm=NONE ctermfg=245 gui=NONE guifg=%s', literal)
     exe printf('hi Comment cterm=NONE ctermfg=240 gui=NONE guifg=%s', comment)
 
+    exe printf('hi TelescopeMatching guifg=%s gui=bold', primary)
+
 " Need to use an `exe` to use variables
-    exe printf('hi Conditional guifg=%s', accent2)
-    exe printf('hi Function guifg=%s', accent2)
-    exe printf('hi Repeat guifg=%s', accent2)
-    exe printf('hi Label guifg=%s', accent2)
-    exe printf('hi Exception guifg=%s', accent2)
+    exe printf('hi Conditional guifg=%s', secondary)
+    exe printf('hi Function guifg=%s', secondary)
+    exe printf('hi Repeat guifg=%s', secondary)
+    exe printf('hi Label guifg=%s', secondary)
+    exe printf('hi Exception guifg=%s', secondary)
     exe printf('hi Number cterm=NONE ctermfg=196   gui=NONE guifg=%s', literal)
     hi Error cterm=NONE ctermfg=255 ctermbg=88 gui=NONE guifg=#eeeeee guibg=#870000
     hi ErrorMsg cterm=NONE ctermfg=255 ctermbg=124 gui=NONE guifg=#eeeeee guibg=#af0000
     exe printf('hi Search gui=NONE guifg=NONE guibg=%s', visual_bg)
     exe printf('hi IncSearch gui=NONE guifg=NONE guibg=%s', visual_bg)
     hi DiffChange cterm=NONE ctermfg=160 ctermbg=255 gui=NONE guifg=#d70000 guibg=#eeeeee
-    exe printf('hi DiffText cterm=bold ctermfg=250 ctermbg=196 gui=bold guifg=#bcbcbc guibg=%s', accent)
+    exe printf('hi DiffText cterm=bold ctermfg=250 ctermbg=196 gui=bold guifg=#bcbcbc guibg=%s', primary)
     hi SignColumn cterm=NONE ctermfg=124 ctermbg=240 gui=NONE guifg=#af0000 guibg=#585858
     hi SpellBad cterm=undercurl ctermfg=255 ctermbg=88 gui=undercurl guifg=#eeeeee guibg=#870000
     hi SpellCap cterm=NONE ctermfg=255 ctermbg=124 gui=NONE guifg=#eeeeee guibg=#af0000
     hi SpellRare cterm=NONE ctermfg=124   gui=NONE guifg=#af0000
     hi WildMenu cterm=NONE ctermfg=240 ctermbg=255 gui=NONE guifg=#585858 guibg=#eeeeee
-    exe printf('hi Delimiter guifg=%s', accent2)
+    exe printf('hi Delimiter guifg=%s', secondary)
     exe printf('hi Pmenu cterm=NONE ctermfg=255 ctermbg=240 gui=NONE guifg=#eeeeee guibg=%s', pmenu)
     exe printf('hi PmenuThumb cterm=NONE ctermfg=232 ctermbg=240 gui=NONE guifg=#080808 guibg=%s', pmenu)
-    exe printf('hi PmenuSbar guibg=%s', accent)
-    exe printf('hi Scrollbar guibg=%s', accent)
+    exe printf('hi PmenuSbar guibg=%s', primary)
+    exe printf('hi Scrollbar guibg=%s', primary)
     hi SpecialKey cterm=NONE ctermfg=16 ctermbg=255 gui=NONE guifg=#000000 guibg=#eeeeee
     exe printf('hi MatchParen cterm=NONE ctermfg=16 ctermbg=240 gui=NONE guifg=#000000 guibg=%s', match_paren)
     exe printf('hi CursorLine cterm=NONE ctermfg=NONE ctermbg=233 gui=NONE guifg=NONE guibg=%s', cursorline_bg)

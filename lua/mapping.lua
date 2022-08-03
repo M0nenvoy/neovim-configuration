@@ -20,7 +20,6 @@ nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 inoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <leader>e <cmd>lua vim.diagnostic.open_float()<CR>
 
-inoremap <c-p> <c-a>
 
 "                               ------------ SNIPPETS ---------------
 " via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
