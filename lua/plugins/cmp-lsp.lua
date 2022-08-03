@@ -77,7 +77,7 @@ local lcfg = require('lspconfig')
 
 lcfg['emmet_ls'].setup  {
     capabilities = capabilities,
-    filetypes = { 'html', 'php', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss' },
+    filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss' },
 }
 lcfg['gopls'].setup     { capabilities = capabilities }
 lcfg['pyright'].setup   { capabilities = capabilities }
