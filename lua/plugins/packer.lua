@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
      require('plugins/telescope'),
      'nvim-treesitter/nvim-treesitter',
      "williamboman/mason-lspconfig.nvim",
-     'williamboman/mason.nvim'
+     'williamboman/mason.nvim',
+     'windwp/nvim-autopairs',
   }
 end)

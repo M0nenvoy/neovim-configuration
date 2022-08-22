@@ -1,5 +1,11 @@
 -- Setup nvim-cmp.
-local cmp = require'cmp'
+local cmp = require('cmp')
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+
+cmp.event:on(
+    'confirm_done',
+    cmp_autopairs.on_confirm_done()
+)
 
 cmp.setup({
 snippet = {
@@ -9,13 +15,11 @@ snippet = {
 },
 enabled = function ()
     -- disable completion in comments
-    -- Trying out comment
     local context = require 'cmp.config.context'
     if vim.api.nvim_get_mode().mode == 'c' then
         return true
     else
-        return (not context.in_syntax_group("Comment")and not context.in_treesitter_capture("comment")
-        and (not context.in_syntax_group("String") and not context.in_treesitter_capture("string")))
+        return not context.in_treesitter_capture("comment") and not context.in_treesitter_capture("string")
     end
 end,
 completion = {
@@ -49,27 +53,11 @@ sources = cmp.config.sources({
 })
 })
 
--- Set configuration for specific filetype.
-cmp.setup.filetype('gitcommit', {
-sources = cmp.config.sources({
-  { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-}, {
-  { name = 'buffer' },
-})
-})
-
 -- Disable autocompletion in telescope
 cmp.setup.filetype('TelescopePrompt', {
     enabled = false
 })
 
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
-mapping = cmp.mapping.preset.cmdline(),
-sources = {
-  { name = 'buffer' }
-}
-})
 
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -77,15 +65,22 @@ local lcfg = require('lspconfig')
 
 lcfg['emmet_ls'].setup  {
     capabilities = capabilities,
-    filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss' },
+    filetypes = { 'html', 'css', 'sass', 'scss' },
 }
 lcfg['gopls'].setup     { capabilities = capabilities }
 lcfg['pyright'].setup   { capabilities = capabilities }
 lcfg['ccls'].setup      { capabilities = capabilities }
-lcfg['tsserver'].setup  { capabilities = capabilities }
+
+lcfg['tsserver'].setup  {
+    capabilities = capabilities,
+    cmd = { 'typescript-language-server', '--stdio' }
+}
+
 lcfg['sumneko_lua'].setup { capabilities = capabilities }
 lcfg['intelephense'].setup { capabilities = capabilities }
-lcfg['tailwindcss'].setup { capabilities = capabilities }
+
+-- Tailwind is slow as shit
+-- lcfg['tailwindcss'].setup { capabilities = capabilities }
 
 
 -- Get rid of that ugly ass yellow color

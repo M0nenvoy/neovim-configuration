@@ -9,10 +9,12 @@ nnoremap <leader>C :tabedit $myvimrc <CR>
 nnoremap <silent> <leader>t :tabnew <CR>
 nnoremap <silent> <leader>h :nohl <CR>
 nnoremap <silent> <leader>u viwUe
-nnoremap <silent> <leader>F :Telescope find_files<cr>
+nnoremap <silent> <leader>f :Telescope fd<cr>
+nnoremap <silent> <leader>g :Telescope live_grep<cr>
 
 "                               -------------- LSP ---------------
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <leader>r <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>a, <cmd>lua vim.lsp.buf.code_action()<CR>
