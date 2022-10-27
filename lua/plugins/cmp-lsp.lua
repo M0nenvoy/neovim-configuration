@@ -79,6 +79,8 @@ lcfg['tsserver'].setup  {
 lcfg['sumneko_lua'].setup { capabilities = capabilities }
 lcfg['intelephense'].setup { capabilities = capabilities }
 
+lcfg['jdtls'].setup {capabilities = capabilities }
+
 -- Tailwind is slow as shit
 -- lcfg['tailwindcss'].setup { capabilities = capabilities }
 
