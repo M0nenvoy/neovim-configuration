@@ -81,6 +81,9 @@ lcfg['intelephense'].setup { capabilities = capabilities }
 
 lcfg['jdtls'].setup {capabilities = capabilities }
 
+-- XML support
+lcfg['lemminx'].setup {capabilities = capabilities}
+
 -- Tailwind is slow as shit
 -- lcfg['tailwindcss'].setup { capabilities = capabilities }
 
