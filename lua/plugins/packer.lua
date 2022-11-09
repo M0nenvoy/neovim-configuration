@@ -1,5 +1,7 @@
 return require('packer').startup(function(use)
   use {
+     require('plugins/telescope'),
+
      'neovim/nvim-lspconfig',
      'hrsh7th/cmp-nvim-lsp',
      'hrsh7th/nvim-cmp',
@@ -11,10 +13,10 @@ return require('packer').startup(function(use)
      'M0nenvoy/friendly-snippets',
      'lewis6991/impatient.nvim',
      'kylechui/nvim-surround',
-     require('plugins/telescope'),
      'nvim-treesitter/nvim-treesitter',
-     "williamboman/mason-lspconfig.nvim",
+     'williamboman/mason-lspconfig.nvim',
      'williamboman/mason.nvim',
      'windwp/nvim-autopairs',
+     'gbprod/substitute.nvim'
   }
 end)
