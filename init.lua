@@ -49,6 +49,25 @@ require("nvim-surround").setup()
 require 'plugins/autopair'
 require('luasnip.loaders.from_vscode').lazy_load()
 
+-- Substitute
+require('substitute').setup({
+  on_substitute = nil,
+  yank_substituted_text = false,
+  range = {
+    prefix = "s",
+    prompt_current_text = false,
+    confirm = false,
+    complete_word = true,
+    motion1 = false,
+    motion2 = false,
+    suffix = "",
+  },
+  exchange = {
+    motion = false,
+    use_esc_to_cancel = true,
+  },
+})
+
 require 'plugins/treesitter'
 
 -- :LspInstall

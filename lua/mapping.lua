@@ -32,6 +32,14 @@ inoremap <silent> <c-h> <cmd>lua require'luasnip'.jump(-1)<Cr>
 snoremap <silent> <c-j> <cmd>lua require('luasnip').jump(1)<Cr>
 snoremap <silent> <c-h> <cmd>lua require('luasnip').jump(-1)<Cr>
 
+
+
 "                               ------------ TERMINAL ---------------
 tnoremap <Esc> <C-\><C-n>
 ]]
+
+                               ------------ SUBSTITUTION -----------
+
+vim.keymap.set("n", "<leader>s", "<cmd>lua require('substitute.range').operator({ complete_word = false })<cr>", { noremap = true })
+vim.keymap.set("x", "<leader>s", "<cmd>lua require('substitute.range').visual()<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>ss", "<cmd>lua require('substitute.range').word()<cr>", { noremap = true })
