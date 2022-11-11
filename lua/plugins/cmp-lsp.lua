@@ -69,7 +69,9 @@ lcfg['emmet_ls'].setup  {
 }
 lcfg['gopls'].setup     { capabilities = capabilities }
 lcfg['pyright'].setup   { capabilities = capabilities }
-lcfg['ccls'].setup      { capabilities = capabilities }
+-- clangd is better since it can automatically resolve imports which is huge!
+-- lcfg['ccls'].setup      { capabilities = capabilities }
+lcfg['clangd'].setup { capabilities = capabilities }
 
 lcfg['tsserver'].setup  {
     capabilities = capabilities,

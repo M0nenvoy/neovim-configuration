@@ -11,6 +11,7 @@ nnoremap <silent> <leader>h :nohl <CR>
 nnoremap <silent> <leader>u viwUe
 nnoremap <silent> <leader>f :Telescope fd<cr>
 nnoremap <silent> <leader>g :Telescope live_grep<cr>
+nnoremap <silent> <leader>q :Telescope diagnostics<cr>
 
 "                               -------------- LSP ---------------
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
