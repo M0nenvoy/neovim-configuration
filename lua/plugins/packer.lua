@@ -1,7 +1,6 @@
 return require('packer').startup(function(use)
   use {
      require('plugins/telescope'),
-
      'neovim/nvim-lspconfig',
      'hrsh7th/cmp-nvim-lsp',
      'hrsh7th/nvim-cmp',
@@ -17,6 +16,7 @@ return require('packer').startup(function(use)
      'williamboman/mason-lspconfig.nvim',
      'williamboman/mason.nvim',
      'windwp/nvim-autopairs',
-     'gbprod/substitute.nvim'
+     'gbprod/substitute.nvim',
+     'dpc/vim-smarttabs',
   }
 end)
