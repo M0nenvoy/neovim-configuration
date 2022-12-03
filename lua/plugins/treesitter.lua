@@ -6,7 +6,7 @@ configs.setup {
     ignore_install = { "" },
     highlight = {
         enable = true,
-        disable = { "" },
+        disable = { "cpp", "bash" },
         additional_vim_regex_highlighting = false,
     },
     -- indent = { enable = true },
