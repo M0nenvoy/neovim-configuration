@@ -22,12 +22,16 @@ vim.cmd("colo 256_noir")
 vim.opt.showmode        = false
 vim.opt.signcolumn      = "number"
 
-vim.opt.autoindent      = true
+vim.opt.autoindent      = false
+vim.opt.cindent         = false
+vim.opt.preserveindent  = false
+vim.opt.copyindent      = false
+vim.opt.softtabstop     = 0
+
 vim.opt.list            = true
 vim.opt.wrap            = false
 vim.opt.tabstop         = 8
 vim.opt.expandtab       = false
-vim.opt.copyindent      = true
 vim.opt.backspace       = "2"
 vim.opt.cursorline      = true
 vim.opt.nu              = true
@@ -38,7 +42,7 @@ vim.opt.updatetime      = 300
 
 vim.opt.mouse           = "a"
 vim.opt.cmdheight       =  2
-vim.opt.foldmethod="indent"
+vim.opt.foldmethod      = "indent"
 
 vim.opt.foldenable      = false
 vim.opt.swapfile        = false
