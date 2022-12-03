@@ -8,6 +8,8 @@
 "
 " colors 232--250 are shades of gray, from dark to light;
 " 16=black, 255=white, 196=red, 88=darkred.
+"
+" recommended background is is #114488
 
 highlight clear
 set background=dark
@@ -20,23 +22,27 @@ if version > 580
 endif
 let g:colors_name = "256_noir"
 
-let literal = '#00a8e8'
-let primary  = '#f9c74f'
-let secondary = '#ff8fa3'
+" let secondary = '#ff8fa3'
+let literal     = '#00c8f8'
+let primary     = '#ffe98f'
+let secondary   = '#ffffff'
 
 " The line numerations
-let numeration  = '#007ea7'
-let comment     = '#00a869'
-let cursorline_bg = '#333346'
+let numeration    = '#007ea7'
+let comment       = '#00e869'
+let cursorline_bg = '#14479b'
 
-let error   = '#ff5555'
-let warn    = '#226080'
-
+let error       = '#fa5587'
+let warn        = '#1260f0'
 let match_paren = '#fa0074'
+let visual_bg   = '#1148d8'
+" let pmenu       = '#003554'
+let pmenu       = cursorline_bg
 
-let visual_bg = '#1b4965'
-
-let pmenu = "#003554"
+if 1
+	let comment = literal
+	let primary = secondary
+endif
 
 if has("gui_running") || &t_Co == 256
     hi Normal cterm=NONE ctermfg=250 ctermbg=16 gui=NONE guifg=#cef3ff
@@ -69,13 +75,14 @@ if has("gui_running") || &t_Co == 256
     hi WildMenu cterm=NONE ctermfg=240 ctermbg=255 gui=NONE guifg=#585858 guibg=#eeeeee
     exe printf('hi Delimiter guifg=%s', secondary)
     exe printf('hi Pmenu cterm=NONE ctermfg=255 ctermbg=240 gui=NONE guifg=#eeeeee guibg=%s', pmenu)
-    exe printf('hi PmenuThumb cterm=NONE ctermfg=232 ctermbg=240 gui=NONE guifg=#080808 guibg=%s', pmenu)
-    exe printf('hi PmenuSbar guibg=%s', primary)
+    exe printf('hi PmenuThumb cterm=NONE ctermfg=232 ctermbg=240 gui=NONE guifg=#080808 guibg=%s', secondary)
+    exe printf('hi PmenuSbar guibg=%s', pmenu)
+    exe printf('hi PmenuSel  gui=reverse guibg=%s', pmenu)
     exe printf('hi Scrollbar guibg=%s', primary)
     hi SpecialKey cterm=NONE ctermfg=16 ctermbg=255 gui=NONE guifg=#000000 guibg=#eeeeee
     exe printf('hi MatchParen cterm=NONE ctermfg=16 ctermbg=240 gui=NONE guifg=#000000 guibg=%s', match_paren)
     exe printf('hi CursorLine cterm=NONE ctermfg=NONE ctermbg=233 gui=NONE guifg=NONE guibg=%s', cursorline_bg)
-    hi StatusLine cterm=bold,reverse ctermfg=245   gui=bold,reverse guifg=#8a8a8a
+    exe printf('hi StatusLine cterm=bold,reverse guifg=%s', secondary)
     hi StatusLineNC cterm=reverse ctermfg=236   gui=reverse guifg=#303030
     exe printf('hi Visual ctermfg=250 guibg=%s', visual_bg)
     hi TermCursor cterm=reverse ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE
@@ -158,8 +165,8 @@ highlight! link SpellLocal SpellCap
 highlight! link NonText Comment
 highlight! link DiffDelete Comment
 highlight! link diffRemoved Comment
-highlight! link PmenuSbar Visual
-highlight! link PmenuSel Visual
+" highlight! link PmenuSbar Visual
+" highlight! link PmenuSel Visual
 highlight! link VisualNOS Visual
 highlight! link VertSplit Visual
 highlight! link Cursor StatusLine
