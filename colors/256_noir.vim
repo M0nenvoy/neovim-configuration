@@ -33,7 +33,7 @@ let comment       = '#00e869'
 let cursorline_bg = '#14479b'
 
 let error       = '#fa5587'
-let warn        = '#1260f0'
+let warn        = '#00e869'
 let match_paren = '#fa0074'
 let visual_bg   = '#1148d8'
 " let pmenu       = '#003554'
