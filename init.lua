@@ -15,9 +15,16 @@ else
         let &t_SI = "\e[5 q"
         let &t_EI = "\e[2 q"
 endif
+
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ }
+
+let g:monochrome_italic_comments = 1
+colo monochrome
+
 ]]
 
-vim.cmd("colo 256_noir")
 
 vim.opt.showmode        = false
 vim.opt.signcolumn      = "number"
@@ -47,7 +54,6 @@ vim.opt.foldmethod      = "indent"
 vim.opt.foldenable      = false
 vim.opt.swapfile        = false
 
-vim.o.statusline        = "%{(&fenc != ''?&fenc:&enc)} | %{&fileformat} | %F"
 -- Plugins
 require 'plugins/packer'
 
@@ -57,8 +63,9 @@ require 'plugins/cmp-lsp'
 -- Mappings
 require 'mapping'
 
-require("nvim-surround").setup()
-require 'plugins/autopair'
+-- Stuff
+require('nvim-surround').setup()
+require('plugins/autopair')
 require('luasnip.loaders.from_vscode').lazy_load()
 
 -- Substitute

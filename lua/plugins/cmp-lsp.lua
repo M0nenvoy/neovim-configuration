@@ -71,16 +71,18 @@ lcfg['emmet_ls'].setup  {
 }
 lcfg['gopls'].setup     { capabilities = capabilities }
 lcfg['pyright'].setup   { capabilities = capabilities }
--- clangd is better since it can automatically resolve imports which is huge!
--- lcfg['ccls'].setup      { capabilities = capabilities }
 lcfg['clangd'].setup { capabilities = capabilities }
+lcfg['rust_analyzer'].setup {
+	capabilities = capabilities,
+	cmd = { 'rustup', 'run', 'stable', 'rust-analyzer' }
+}
 
 lcfg['tsserver'].setup  {
     capabilities = capabilities,
     cmd = { 'typescript-language-server', '--stdio' }
 }
 
-lcfg['sumneko_lua'].setup { capabilities = capabilities }
+-- lcfg['sumneko_lua'].setup { capabilities = capabilities }
 lcfg['intelephense'].setup { capabilities = capabilities }
 
 lcfg['jdtls'].setup {capabilities = capabilities }
