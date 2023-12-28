@@ -16,6 +16,7 @@ nnoremap <silent> <leader>q :Telescope diagnostics<cr>
 "                               -------------- LSP ---------------
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <leader>r <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>a, <cmd>lua vim.lsp.buf.code_action()<CR>
